@@ -84,7 +84,7 @@ var game = {
 		$('td').on('click', function() {
 			var $td = $(this),
  				$tr = $td.parent(),
-			    $allTrs = $('tr'),
+			    	$allTrs = $('tr'),
 				$trChildren = $tr.children();
 				$counter = $counter + 1;
 
