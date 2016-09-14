@@ -3,7 +3,7 @@ console.log("checking the push");
 
 var $counter = 0;
 
-$winner = false;
+var $winner = false;
 
 var playerOne = {
 	pName: "",
@@ -80,7 +80,7 @@ var game = {
 		console.log(this.currentPlayer());
 	},
 
-	assignSpace: function() {	
+	assignSpace: function() {
 		$('td').on('click', function() {
 			var $td = $(this),
  				$tr = $td.parent(),
@@ -103,7 +103,7 @@ var game = {
 	checkForWinner: function (rowNumber, columnNumber) {
 		console.log(rowNumber, columnNumber);
 
-		if ($board[rowNumber][0].text() === $board[rowNumber][1].text() && 
+		if ($board[rowNumber][0].text() === $board[rowNumber][1].text() &&
 			$board[rowNumber][1].text() === $board[rowNumber][2].text()) {
 
 			game.currentPlayer().score = game.currentPlayer().score + 1;
@@ -112,7 +112,7 @@ var game = {
 		};
 
 		// column
-		if ($board[0][columnNumber].text() === $board[1][columnNumber].text() && 
+		if ($board[0][columnNumber].text() === $board[1][columnNumber].text() &&
 			$board[1][columnNumber].text() === $board[2][columnNumber].text()) {
 
 			game.currentPlayer().score = game.currentPlayer().score + 1;
@@ -120,16 +120,16 @@ var game = {
 			$winner = true;
 		};
 
-		// diagonals 
-		if ($board[0][0].text() === "X" && $board[1][1].text() === "X" && 
+		// diagonals
+		if ($board[0][0].text() === "X" && $board[1][1].text() === "X" &&
 			$board[2][2].text() === "X") {
-			
+
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
 			$winner = true;
 		};
 
-		if ($board[0][0].text() === "O" && $board[1][1].text() === "O" && 
+		if ($board[0][0].text() === "O" && $board[1][1].text() === "O" &&
 			$board[2][2].text() === "O") {
 
 			game.currentPlayer().score = game.currentPlayer().score + 1;
@@ -137,7 +137,7 @@ var game = {
 			$winner = true;
 		};
 
-		if ($board[0][2].text() === "X" && $board[1][1].text() === "X" && 
+		if ($board[0][2].text() === "X" && $board[1][1].text() === "X" &&
 			$board[2][0].text() === "X") {
 
 			game.currentPlayer().score = game.currentPlayer().score + 1;
@@ -145,7 +145,7 @@ var game = {
 			$winner = true;
 		};
 
-		if ($board[0][2].text() === "O" && $board[1][1].text() === "O" && 
+		if ($board[0][2].text() === "O" && $board[1][1].text() === "O" &&
 			$board[2][0].text() === "O") {
 
 
